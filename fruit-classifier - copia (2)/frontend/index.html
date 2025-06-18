@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Frutas con IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Clasificador de Frutas</h1>
+            <p class="subtitle">con Inteligencia Artificial</p>
+        </header>
+
+        <!-- Controles principales -->
+        <div class="controls">
+            <button class="btn btn-upload" id="uploadBtn">
+                <span class="btn-icon">📤</span>
+                <span class="btn-text">
+                    <span class="btn-main">Subir imagen</span>
+                    <span class="btn-sub">desde tu PC</span>
+                </span>
+            </button>
+
+            <button class="btn btn-camera" id="cameraBtn">
+                <span class="btn-icon">📷</span>
+                <span class="btn-text">
+                    <span class="btn-main">Tomar foto</span>
+                    <span class="btn-sub">con la cámara</span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Input file oculto -->
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+        <!-- Botón cambiar método -->
+        <div class="method-toggle">
+            <button class="btn-method" id="methodBtn">Cambiar método</button>
+        </div>
+
+        <!-- Área de imagen y resultado -->
+        <div class="result-area" id="resultArea" style="display: none;">
+            <div class="image-container">
+                <img id="previewImage" alt="Imagen de fruta" class="preview-img">
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="spinner"></div>
+                    <p>Analizando imagen...</p>
+                </div>
+            </div>
+            
+            <div class="prediction-container">
+                <h2 class="prediction-title" id="predictionTitle">Manzana</h2>
+                <p class="confidence" id="confidenceText">97.6%</p>
+            </div>
+        </div>
+
+        <!-- Cámara (oculta inicialmente) -->
+        <div class="camera-container" id="cameraContainer" style="display: none;">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div class="camera-controls">
+                <button class="btn btn-capture" id="captureBtn">📸 Capturar</button>
+                <button class="btn btn-close-camera" id="closeCameraBtn">❌ Cerrar cámara</button>
+            </div>
+        </div>
+
+        <!-- Error messages -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <p id="errorText"></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
